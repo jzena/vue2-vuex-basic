@@ -18,13 +18,10 @@ import { mapGetters } from "vuex";
 export default {
   methods: {
     unregister(registration) {
-      const state = this.$store.state;
-      const user = state.users.find(user => {
-        return user.id == registration.userId;
+      this.$store.commit({
+        type: "unregister",
+        userId: registration.userId
       });
-      user.registered = false;
-      const index = state.registrations.indexOf(registration);
-      state.registrations.splice(index, 1);
     }
   },
   computed: {
