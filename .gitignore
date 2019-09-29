@@ -2,5 +2,12 @@
 node_modules/
 dist/
 npm-debug.log
-.idea
+yarn-error.log
+package-lock.json
 
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
