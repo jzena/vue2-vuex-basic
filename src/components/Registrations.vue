@@ -15,15 +15,23 @@
 
 <script>
 export default {
-  props: ["registrations"],
   methods: {
     unregister(registration) {
-      this.$emit("userUnregistered", registration);
+      const state = this.$store.state;
+      const user = state.users.find(user => {
+        return user.id == registration.userId;
+      });
+      user.registered = false;
+      const index = state.registrations.indexOf(registration);
+      state.registrations.splice(index, 1);
     }
   },
   computed: {
+    registrations() {
+      return this.$store.state.registrations;
+    },
     total() {
-      return this.registrations.length;
+      return this.$store.state.registrations.length;
     }
   }
 };
