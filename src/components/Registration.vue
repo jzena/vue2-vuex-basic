@@ -10,11 +10,12 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   computed: {
-    users() {
-      return this.$store.state.users.filter(user => !user.registered);
-    }
+    ...mapGetters({
+      users: "unregisteredUsers"
+    })
   },
   methods: {
     registerUser(user) {
