@@ -1,6 +1,6 @@
 # vue-vuex-basic-2
 
-> A Vue.js project
+> A Vue.js project 
 
 ## Build Setup
 
